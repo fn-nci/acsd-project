@@ -1,0 +1,83 @@
+@use "sass:color";
+@use "./App.scss" as *;
+@import './variables';
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: $text-primary;
+    font-weight: 500;
+    transition: color $transition-speed ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .user-name {
+      color: $text-secondary;
+      font-weight: 500;
+    }
+
+    .logout-button {
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+      border-radius: $border-radius;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all $transition-speed ease;
+
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: $spacing-unit * 1.5;
+    
+    .navbar-brand {
+      padding-right: $spacing-unit;
+    }
+    
+    .navbar-links {
+      gap: $spacing-unit * 2;
+    }
+  }
+} 

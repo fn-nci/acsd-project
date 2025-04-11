@@ -1,0 +1,59 @@
+@use "sass:color";
+@use "./App.scss" as *;
+
+.logo {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .logo-symbol {
+    transition: transform 0.5s ease;
+    
+    &:hover {
+      transform: rotate(15deg);
+    }
+  }
+  
+  .logo-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    
+    .logo-text-primary {
+      font-size: 22px;
+      fill: $primary-color;
+      letter-spacing: 0.5px;
+    }
+    
+    .logo-text-secondary {
+      font-size: 26px;
+      fill: $text-primary;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+// Size variants
+.logo-small {
+  width: 140px;
+  height: 42px;
+}
+
+.logo-medium {
+  width: 180px;
+  height: 54px;
+}
+
+.logo-large {
+  width: 240px;
+  height: 60px;
+} 

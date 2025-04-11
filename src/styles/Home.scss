@@ -1,0 +1,127 @@
+@use "sass:color";
+@use "./App.scss" as *;
+
+.home {
+  .hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../assets/ireland-hero.jpg') center/cover no-repeat;
+    margin: -#{$spacing-unit * 3};
+    margin-bottom: $spacing-unit * 3;
+    padding: $spacing-unit * 3;
+    color: white;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, 
+        color.adjust($primary-color, $alpha: -0.3), 
+        color.adjust($primary-dark, $alpha: -0.3)
+      );
+      z-index: 1;
+    }
+
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: $spacing-unit * 2;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-out;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: $spacing-unit * 4;
+      max-width: 600px;
+      animation: fadeIn 1s ease-out 0.3s backwards;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+      @media (max-width: 768px) {
+        font-size: 1.25rem;
+      }
+    }
+
+    .cta-button {
+      padding: $spacing-unit * 2 $spacing-unit * 4;
+      font-size: 1.25rem;
+      background-color: $secondary-color;
+      color: $text-primary;
+      animation: fadeIn 1s ease-out 0.6s backwards;
+
+      &:hover {
+        background-color: color.adjust($secondary-color, $lightness: -10%);
+      }
+    }
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-unit * 3;
+    padding: $spacing-unit * 3 0;
+
+    .feature-card {
+      @extend .card;
+      text-align: center;
+      padding: $spacing-unit * 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.5s ease-out backwards;
+
+      &:nth-child(1) { animation-delay: 0.2s; }
+      &:nth-child(2) { animation-delay: 0.4s; }
+      &:nth-child(3) { animation-delay: 0.6s; }
+
+      h3 {
+        color: $primary-color;
+        margin-bottom: $spacing-unit * 2;
+      }
+
+      p {
+        color: $text-secondary;
+        line-height: 1.6;
+      }
+
+      &::before {
+        content: '';
+        width: 60px;
+        height: 60px;
+        margin-bottom: $spacing-unit * 2;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &:nth-child(1)::before {
+        background-image: url('../assets/landscape-icon.svg');
+      }
+
+      &:nth-child(2)::before {
+        background-image: url('../assets/culture-icon.svg');
+      }
+
+      &:nth-child(3)::before {
+        background-image: url('../assets/experience-icon.svg');
+      }
+    }
+  }
+} 

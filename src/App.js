@@ -1,0 +1,42 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Destinations from './pages/Destinations';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import ProtectedRoute from './components/ProtectedRoute';
+import './styles/App.scss';
+
+function App() {
+  return (
+    <Provider store={store}>
+      <Router>
+        <div className="app">
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route 
+                path="/destinations" 
+                element={
+                  <ProtectedRoute>
+                    <Destinations />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </Provider>
+  );
+}
+
+export default App;
