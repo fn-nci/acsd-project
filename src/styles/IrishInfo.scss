@@ -1,0 +1,314 @@
+/* Author: Ailsa Prideaux-Mooney, April 2025 */
+/* SCSS styling for IrishInfo.js */
+
+/* container for IrishInfo page */
+.irish-info-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap; /* allow wrapping of content */
+    justify-content: space-between;
+  }
+  
+  /* containers - left for currency converter and Facts about Ireland, right for events */
+  .left-container,
+  .right-container {
+    width: 46%; /* take up 46% of width (so they'll appear side-by-side on big screens) */
+    padding: 20px;
+    background: #D6F77C;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* styling for flag image */
+  .flag-image {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;      /* cover area without stretching */
+    animation: flagWave 4s ease-in-out infinite;    /* 4 second cycle for my amazing waving flag animation, lol */
+    transform-origin: center center;
+  }
+  
+  /* my feeble attempt at animating the flag to make it look like it's blowing in the wind, I think it looks like it's walking drunk, but I made an effort haha */
+  @keyframes flagWave {
+    0% {
+      transform: skewY(0deg) translateX(0);    /* start with no skew and no horizontal shift */
+    }
+    25% {
+      transform: skewY(-5deg) translateX(5px);   /* tilt back and shift right */
+    }
+    50% {
+      transform: skewY(5deg) translateX(-5px);    /* tilt forward and shift left */
+    }
+    75% {
+      transform: skewY(-5deg) translateX(5px);    /* tilt back and shift right */
+    }
+    100% {
+      transform: skewY(0deg) translateX(0);   /* back to start point */
+    }
+  }
+  
+  /*styling for shamrock image container */
+  .shamrock-image-container {
+    display: flex;
+    justify-content: center; /*centre the image */
+    margin-top: 10px; /*add space above the image */
+  }
+  
+  /*styling for shamrock image */
+  .shamrock-image {
+    max-width: 100px; /* keep image small */
+    height: auto; /* maintain image aspect ratio */
+    border-radius: 50px; /* round edges of image */
+    border: none; /* removes aboder around image */
+    animation: glow 1.5s infinite alternate; /* glowing effect on 1.5 sec cycle*/
+    margin-top: 20px; /* add additional space at top of image for spacing */
+  }
+  
+  /* going crazy with keyframes for the glowing effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3); /*soft glow with 2 box shadow blurs w varying opacity */
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.6); /*intense glow with 2 box shadows w varying opacity */
+    }
+  }
+
+  /*heading styling */
+  h1, h2 {
+    color: #333;   /*dark gray text */
+    margin-bottom: 10px;  /*add space below heading to separate from next element */
+  }
+  
+  /*paragraph styling */
+  p {
+    color: #555; /*slightly lighter gray for body text */
+    font-size: 1rem;  /*set font size to root to be consistent */
+    line-height: 1.5; /*increase line spacing */
+    margin-bottom: 10px; /*add space below paragraph */
+  }
+  
+  /*styling for currency dropdown */
+  select {
+    padding: 8px;   /*add space inside dropdown for better target area */
+    margin-top: 10px;    /*add space above dropdown to separate it */
+    font-size: 1rem;   /*set text size to be consistent with base font size */
+    border: 1px solid #ddd;  /*light grey border for dropdown */
+    border-radius: 4px; /*slightly rounded corners - I don't like sharp corners lol */
+    cursor: pointer;   /*change the cursor to pointer to show it's clickable */
+  }
+  
+  /*styling for events list  */
+  ul {
+    list-style: none;  /*get rid of default bullet points cos they are ugly */
+    padding: 0;  /*remove default padding  */
+    display: flex;  /*make the list a flex container */
+    flex-direction: column; /*display list items vertically */
+    align-items: center;  /*centre list items horizontally within container */
+  }
+  
+  li {
+    margin-bottom: 8px; /*add space between each list item  */
+  }
+
+   /*styling for anchor tags  */
+  a {
+    color: #051074;  /* text color nice dark French blue */
+    text-decoration: none;  /*no underline */
+    font-size: 1.1rem;  /* slightly bigger than default root size */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* smooth transition */
+    display: inline-block; /* allow anchor tag to behave like block element to allow padding and transform */
+    padding: 5px 10px; /* add some padding to allow space to scale */
+  }
+  
+  a:hover {
+    text-decoration: underline;  /* add underline on mouseover to show it's clickable */
+    background-color: #D6F77C; /* colour change on mouseover */
+    color: #0f4d99;  /* colour change slightly lighter on mouseover */
+    transform: scale(1.2); /* scale a little on mouseover */
+  }
+  
+  /*news section styles */
+  .news-container {
+    width: 100%;  /*allow container to span full width of parent */
+    max-width: 1200px; /*restrict width to avoid stretching too wide on large screens */
+    margin-top: 30px; /*add space above news section to separate from content above */
+    padding: 10px 20px;   /*add space inside the container to give inner content space away from edges */
+    background: #D1E6FF; /* pale blue background */ 
+    border-radius: 8px;  /* get rid of those pointy corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* nice low-key shadow for depth effect */
+  }
+  
+  .news-container h2 {
+    font-size: 32px; /* explicitly setting font size for this h2 as it was acting oddly */
+    color: #333;  /* dark grey text */
+    text-align: center; /* centre horizontally */
+    margin-bottom: 10px;   /*add space below */
+  }
+  
+  /* reduce spacing between individual <li> elements cos they were taking up too much real estate */
+  .news-container ul {
+    list-style-type: none;  /* no ugly bullet points for list items */
+    padding: 0; /* no padding */
+    margin: 0;  /* no margin to decrease vertical spacing */
+  }
+  
+  .news-container li {
+    font-size: 14px;  /* smaller font size for news list items */
+    color: #333;   /* that dark grey again */
+    padding: 3px 0; /*a little vertical padding to space out each item a bit */
+    margin: 0;  /* no margin to keep list items together */
+  }
+  
+  .news-container li a {
+    text-decoration: none;  /* remove underline from links */
+    color: #2a6ebb; /* link colour */
+  }
+  
+  .news-container li a:hover {
+    text-decoration: underline;  /*add underline on hover to show link is clickable */
+  }
+  
+  /* hide extra articles initially */
+  .hidden-news {
+    display: none;   /* don't display any hidden news items */
+  }
+  
+  /*reveal additional content when expanded */
+  .hidden-news.expanded {
+    display: block;  /* display all hidden news items when they have expanded class added */
+  }
+  
+  /* styling for Show More button */
+  .show-more-btn {
+    background-color: #64a5f5; /* same blue background as search button */
+    color: #333; /* that dark grey again */
+    padding: 10px 20px; /*a little bit of padding inside  button to make it larger, easier to click */
+    border: none; /* no button border */
+    border-radius: 4px; /* rounded corners */
+    cursor: pointer;  /* change cursor to pointer to show it's clickable */
+    margin-left: 10px; /* space between button and container edges */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /* smooth transitions for shadow, etc */
+    display: block;  /* make it block element, so margins can centre it */
+    margin-left: auto;  /* adjust left margin to centre horizontally */
+    margin-right: auto; /* adjust right margin to centre horizontally */
+    width: 150px; /* width for button */
+  }
+  
+  .show-more-btn:hover {
+    background-color: #D6F77C; /* green background on hover */
+    color: black; /* change text color to black on hover */
+    transform: scale(1.05); /* slightly increase size on hover */
+    box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
+    filter: brightness(1.1); /* make button brighter */
+  }
+
+  .news-container {
+    width: 100%;  /*take up full width of parent element */
+    max-width: 1200px; /* stop it stretching too wide on large screens */
+    margin-top: 40px; /*add space above */
+    padding: 20px;  /*add padding inside container */
+    background: #D1E6FF; /* pale blue background */ 
+    border-radius: 8px;  /* rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* nice soft shadow effect for depth */
+    display: flex;  /* flexbox layout  */
+    flex-direction: column; /* align items vertically */
+  }
+  
+   /* styling for news source div */
+  .news-source {
+    text-align: right; /* align link to right */
+    margin-left: auto; /* push news source link to right */
+    width: 100%; /* ensure it takes up full avail width */
+    padding-top: 10px; /* adds small space above link */
+  }
+  
+  .news-source a {
+    color: gray;  /*  a light gray that won't pull focus */
+    font-size: 1rem; /* root font size for consistency */
+    text-decoration: none;  /*no underline */
+    font-weight: bold;
+  }
+  
+  .news-source a:hover {
+    text-decoration: underline;  /*add underline on mouseover to show it's clickable */
+  }
+  
+  
+  /* styling for the "Studying in Ireland" section */
+  .studying-section {
+    margin-top: 40px;   /*add space above */
+    padding: 20px;  /*add some padding around content */
+    background: #D1E6FF;  /*light blue background*/
+    border-radius: 8px; /*rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /*subtle shadow effect */
+    width: 100%;  /*take up full width of parent */
+  }
+  
+  .studying-container {
+    max-width: 700px; /*stop content spreadng too wide */
+    margin: 0 auto; /*centre content horizontally */
+    padding: 20px; /*add some padding around content */
+    background-color: #E8FB9F; /*light background colour */
+    border-radius: 8px; /*rounded corners */
+  }
+  
+  /*universities grid */
+  .universities-grid {
+    display: grid;   /* use grid layout for container */
+    grid-template-columns: repeat(5, 1fr); /* 5 items per row  */
+    gap: 20px; /* space between grid items  */
+    justify-items: center;  /* centre horizontally within grid item  */
+    padding: 20px; /* add a little padding for spacing  */
+  }
+  
+  /* hover effect */
+  .university-card:hover {
+    transform: scale(1.1); /* slightly increase size on mouseover */
+    background: #D6F77C;  /* subtle colour change on mouseover */
+    color: #64a5f5;  /* text colour on mouseover */
+    box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /*add a glowing effect using a kind of teal shadow */
+  }
+  
+  /*university card styling */
+  .university-card {
+    background: #E8FB9F;  /* soft yellow-green background */
+    padding: 20px; /* padding inside card */
+    border-radius: 8px;  /* rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* soft shadow for depth */
+    text-align: center;  /* centre text inside card */
+    width: 85%; /* stretch the card to take up 85% of the available space in its grid cell */
+    transition: transform 0.3s ease-in-out; /* smooth scaling transition into and out of hover effect */
+  }
+  
+  /* university dard Heading */
+  .university-card h4 {
+    margin: 10px 0;   /* space top and bottom */
+    font-size: 16px;  /* set font size of heading */
+    font-weight: bold; /* make it bold text */
+  }
+  
+  /* media queries for responsiveness */
+  /* for screens with a max width of 800px */
+  @media (max-width: 800px) {
+    .left-container,
+    .right-container {
+      width: 100%; /* stack left and right containers vertically on smaller screens */
+      margin-bottom: 20px; /* space between stacked containers */
+    }
+  
+    .universities-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+    }
+  }
+  /* for screens with a max width of 500px */
+  @media (max-width: 500px) {
+    .universities-grid {
+      grid-template-columns: 1fr; /* 1 item per row on small screens */
+    }
+  }
+  
+
