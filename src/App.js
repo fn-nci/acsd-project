@@ -12,6 +12,9 @@ import ProtectedRoute from './components/ProtectedRoute';
 import './styles/App.scss';
 import Hotels from './pages/Hotels';
 import Restaurants from './pages/Restaurants';
+import IrishWeather from './pages/IrishWeather';
+import IrishInfo from './pages/IrishiInfo';
+import IrelandTravelTips from './pages/IrelandTravelTips;'
 
 function App() {
   return (
@@ -43,6 +46,30 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Restaurants />
+                  </ProtectedRoute>
+                } 
+              />
+                <Route 
+                path="/irishweather" 
+                element={
+                  <ProtectedRoute>
+                    <IrishWeather />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/irishinfo" 
+                element={
+                  <ProtectedRoute>
+                    <IrishInfo />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/irelandtraveltips" 
+                element={
+                  <ProtectedRoute>
+                    <IrelandTravelTips />
                   </ProtectedRoute>
                 } 
               />
