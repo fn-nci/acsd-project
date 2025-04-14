@@ -25,6 +25,12 @@ const Navbar = () => {
           <Link to="/destinations" className="nav-link">
             Destinations
           </Link>
+          <Link to="/hotels" className="nav-link">
+            Hotels
+          </Link>
+          <Link to="/restaurants" className="nav-link">
+            Restaurants
+          </Link>
           {isAuthenticated ? (
             <>
               <span className="nav-link user-name">

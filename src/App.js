@@ -10,6 +10,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import ProtectedRoute from './components/ProtectedRoute';
 import './styles/App.scss';
+import Hotels from './pages/Hotels';
+import Restaurants from './pages/Restaurants';
 
 function App() {
   return (
@@ -25,6 +27,22 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Destinations />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/hotels" 
+                element={
+                  <ProtectedRoute>
+                    <Hotels />
+                  </ProtectedRoute>
+                } 
+              />
+               <Route 
+                path="/restaurants" 
+                element={
+                  <ProtectedRoute>
+                    <Restaurants />
                   </ProtectedRoute>
                 } 
               />
