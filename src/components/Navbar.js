@@ -31,6 +31,15 @@ const Navbar = () => {
           <Link to="/restaurants" className="nav-link">
             Restaurants
           </Link>
+          <Link to="/irishweather" className="nav-link">
+            IrishWeather
+          </Link>
+          <Link to="/irishinfo" className="nav-link">
+            IrishInfo
+          </Link>
+          <Link to="/irelandtraveltips" className="nav-link">
+            IrelandTravelTips
+          </Link>
           {isAuthenticated ? (
             <>
               <span className="nav-link user-name">
