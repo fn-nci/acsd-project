@@ -13,8 +13,8 @@ import './styles/App.scss';
 import Hotels from './pages/Hotels';
 import Restaurants from './pages/Restaurants';
 import IrishWeather from './pages/IrishWeather';
-import IrishInfo from './pages/IrishiInfo';
-import IrelandTravelTips from './pages/IrelandTravelTips;'
+import IrishInfo from './pages/IrishInfo';
+import IrelandTravelTips from './pages/IrelandTravelTips';
 
 function App() {
   return (
