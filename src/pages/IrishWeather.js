@@ -94,11 +94,18 @@ const IrishWeather = () => {
     return `${day}/${month}/${year}`; //formatted date
   };
 
-  return (
-    <div >
-      <div className="irish-weather-title-container">
-        <h2 className="irish-weather-title">Irish Weather</h2>
-      </div>
+  return ( 
+    <div>
+      {/* adding header to create unified feel for website */}
+     <div className="page-header">
+      <h2>Irish Weather</h2>
+      <div className="weather-info">
+        <p>
+          We have lots of it. Come see your yourself.
+        </p>
+      </div>  
+      </div> 
+
         
       {/* Text before the search box */}
       <div className="intro-text">

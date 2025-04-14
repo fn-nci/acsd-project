@@ -72,10 +72,18 @@ const IrelandTravelTips = () => {
   };
 
   return (
+
+    <>
+    <div className="page-header">
+    <h2>Travel Tips</h2>
+     <div className="weather-info">
+       <p>
+       Got a favourite Irish destination? Share your travel tips and discover others here.
+       </p>
+     </div>  
+  </div> 
+
     <div className="travel-tips-page">
-        <div className="travel-tips-header">
-            <h1>Ireland Travel Tips</h1>
-        </div>
 
       {/*form to submit a new travel tip */}
       <TravelTipForm onAddTip={addTip} />
@@ -94,6 +102,7 @@ const IrelandTravelTips = () => {
             ))}
         </div>
     </div>
+    </>
   );
 };
 

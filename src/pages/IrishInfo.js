@@ -112,6 +112,18 @@ const handleToggle = () => {
 
 
   return (
+    //wrapping it all in a fragment to acommodate me adding a page header to fit in with look of other pages
+    <>   
+    {/* adding header to create unified feel for website */} 
+    <div className="page-header">
+    <h2>Irish Info</h2>
+    <div className="irishinfo-info">
+     <p>
+      The things you never knew you needed to know about Ireland. Find them here.
+    </p>
+   </div> 
+  </div>
+
     <div className="irish-info-container">
       {/* Left Container for country data and currency exchange */}
       <div className="left-container">
@@ -261,6 +273,7 @@ const handleToggle = () => {
         </div>
       </div>
     </div>
+    </>    //closing fragment 
   );
 };
 
