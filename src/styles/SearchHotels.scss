@@ -1,0 +1,91 @@
+@import 'variables';
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-unit * 3;// 24px
+    background-color: $background-light;
+    padding: $spacing-unit * 3;
+    border-radius: $border-radius;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hotel-card {
+    background-color: $background-white;
+    border-radius: $border-radius * 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: $spacing-unit * 2;
+    transition: all $transition-speed ease;
+    display: flex;
+    flex-direction: column;
+    
+  
+
+    &:hover {
+        box-shadow: $box-shadow-hover;
+        transform: translateY(-5px)
+    }
+
+    strong {
+        font-size: 1.1rem;
+        margin-bottom: $spacing-unit;
+        color: $text-primary;
+    }
+
+    p{
+        font-size: 0.95rem;
+        color: $text-secondary;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: $spacing-unit;
+
+        svg {
+            flex-shrink: 0;
+            color: $primary-color; // icon color
+        }
+    }
+}
+
+.icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $primary-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+
+    svg {
+        color: $primary-dark;
+    }
+}
+
+.load-more-button{
+    display: block;
+    margin: $spacing-unit * 3 auto; //24px auto
+    padding: $spacing-unit $spacing-unit * 2;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: $primary-light;
+    color: $primary-dark;
+    border:none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color $transition-speed, transform 0.2 ease;
+
+    &:hover:not(:disabled) {
+        background-color: $primary-dark;
+        color: #ccc;
+        transform: translateY(-2px);
+    }
+
+    &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+}

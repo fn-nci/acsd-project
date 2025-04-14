@@ -1,0 +1,105 @@
+@import 'variables';
+
+.restaurant-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-unit * 3; 
+    padding-left: $spacing-unit * 5;
+    padding-right: $spacing-unit * 5;
+    text-align: center;
+    background-color: $background-light;
+
+    h2 {
+        margin-bottom: $spacing-unit * 2; //16px
+        font-size: 2rem;
+        color: $primary-color;
+    }
+
+    .error {
+        color: $error-color;
+        margin-bottom: $spacing-unit *2;
+    }
+}
+
+.restaurant-swiper{
+    position: relative; // for arrows positioning - relative to the container
+    //overflow: visible; // ensure visibility of the arrows - outside the container
+    padding-bottom: $spacing-unit *4; // adding space for the dots
+
+    .swiper-slide{
+        display: flex;
+        justify-content: center;
+        padding: 0; // spacing between slides
+    }
+
+    .restaurant-card {
+        background: $background-white;
+        max-width: 280px;
+        padding: 1.5rem;
+        border-radius: $border-radius;
+        border: 1px solid $primary-light;// border
+        box-shadow: $box-shadow;
+        width: 100%;
+        text-align: center;
+        transition: transform $transition-speed ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: $box-shadow-hover;
+            background-color: $primary-light;
+            color: #ccc;
+        }
+
+        h3 {
+            margin: 0 0 $spacing-unit;
+            font-size: 1.1rem;
+            color: $primary-color;
+        }
+
+        p {
+            font-size: 0.95rem;
+            margin: 0.25rem 0;
+        }
+
+        a {
+            color: $primary-color;
+            text-decoration: underline;
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: $primary-color; // sets arrows color
+        top: 50%;
+        transform: translateY(-50%);// vertically center the arrows
+        z-index: 10;
+    }
+
+    .swiper-button-prev {
+        left: 0;
+    }
+
+    .swiper-button-next {
+        right: 0;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: $primary-color;
+    }
+
+    //small screens layout
+
+    @media (max-width: 768px) {
+        .swiper-button-prev {
+            left: -0.5rem;
+        }
+
+        .swiper-button-next {
+            right: -0.5rem;
+        }
+
+        .restaurant-card {
+            max-width: 80%;
+        }
+    }
+}

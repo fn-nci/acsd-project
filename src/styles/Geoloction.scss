@@ -1,0 +1,54 @@
+@import 'variables';
+
+.geo-container{
+    display: flex;
+    justify-content: center;
+    gap: $spacing-unit * 3; //16px
+    background-color: $background-light;
+    padding: $spacing-unit * 2;
+    border-radius: $border-radius;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.geo-box {
+    width: 250px;
+    background-image: $background-white;
+    padding: $spacing-unit * 2;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    text-align: center;
+    transition: transform $transition-speed;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $box-shadow-hover;
+    }
+
+    p {
+        margin: $spacing-unit * 0.5 0;
+        font-size: 1rem;
+        color: $text-secondary;
+
+        strong {
+            color: $text-primary;
+        }
+    }
+
+    .geo-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $primary-light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto $spacing-unit;
+        flex-shrink: 0;
+
+        svg {
+            color: $primary-dark;
+        }
+    }
+
+}
