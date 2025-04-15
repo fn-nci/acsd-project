@@ -67,7 +67,7 @@
 
 
    /* page header scss to match other pages */
-  .info-page-header {
+   .info-page-header {
     position: relative;
     height: 400px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -79,29 +79,26 @@
     color: white;
     text-align: center;
     margin-bottom: 4rem;
-  }
 
- 
-  .info-page-header h2 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: fadeInDown 1s ease-out;
-    color: white; // just to be safe
-  }
-  
-  .info-page-header .weather-info {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
-  .info-page-header .weather-info p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease-out 0.3s backwards;
-    color: white; // explicitly set white
+    h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .irishinfo-info {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      
+      p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 1s ease-out 0.3s backwards;
+      }
+    }
   }
 
   /* containers - left for currency converter and Facts about Ireland, right for events */
