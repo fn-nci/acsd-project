@@ -2,13 +2,71 @@
 /* SCSS styling for IrelandTravelTips.js */
 
 .travel-tips-page {
-    max-width: 800px; /*setting max width to ensure it doesn't go too wide on larger screens */
-    margin: 50px auto;  /*centre page horizontally by setting auto margins on both sides */
-    padding: 20px;
+  max-width: 800px; /*setting max width to ensure it doesn't go too wide on larger screens */
+  margin: 50px auto;  /*centre page horizontally by setting auto margins on both sides */
+  padding: 20px;
+
+  /*styling for submit button */
+  button {
+    padding: 10px; 
+    background-color: #64a5f5;
+    color: #333;
+    border: none;   /*no border */
+    font-weight: bold;
+    border-radius: 4px;   /*rounded corners */
+    cursor: pointer;  /* to indicate clickable button */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /* smooth transitions */
+
+    &:hover {
+      background-color: #D6F77C;
+      color: #333;
+      transform: scale(1.05); /*slightly increase size */
+      box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
+      filter: brightness(1.1); /*make the button brighter */
+    }
   }
-  
- /* page header scss to match other pages */
- .tips-page-header {
+
+  .tips-list {
+    display: flex;  /*use flexbox for layout */
+    flex-direction: column;   /*arrange items vertically */
+    gap: 20px;
+  }
+
+  .tip-card {
+    background-color: #D1E6FF;
+    padding: 20px;
+    border-radius: 8px;   /* rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /*subtle shadow for depth */
+  }
+
+  .tip-actions {
+    display: flex;   /*use flexbox for layout */
+    gap: 10px;
+    margin-top: 10px;
+
+    button {
+      background-color: #d6f77c;
+      color:#333;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;   /* rounded corners */
+      cursor: pointer;  /* to indicate clickable button */
+      transition: all 0.3s ease; // smooth animation
+
+      &:hover {
+        background-color: #c3e867; // A slightly darker/lighter green
+        color: black;
+        transform: scale(1.05); // slight increase in size on hover 
+        box-shadow: 0 0 15px rgba(143, 250, 3, 0.822); /* Add a glowing effect */
+        filter: brightness(1.2); /* Make the box brighter */
+      }
+    }
+  }
+}
+
+
+/* page header scss to match other pages */
+.tips-page-header {
   position: relative;
   height: 400px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -45,92 +103,33 @@
   color: white; // explicitly set white
 }
 
-  
-  .travel-tip-form {
-    display: flex;   /*use flexbox for layout */
-    flex-direction: column;  /*arrange form fields vertically */
-    gap: 10px;  /*gap between form fields */
-    margin-bottom: 30px; /*space at bottom of form */
-  
-    .form-field {
-      background-color: #D1E6FF; /* pale blue */
-      border: 1px solid #ccc;
-      padding: 8px;  /*padding inside field */
-      border-radius: 4px;  /*rounded corners */
-      font-family: inherit;   /*use same font as parent */
-      width: 100%;  /*take up full width of container */
-      box-sizing: border-box; /*ncilude padding and border in total width */
-  
-      /*styling for form fields when user has clicked into them (focussed) */
-      &:focus {
-        outline: none;  /* no outline */
-        border-color: #d6f77c; /*  greenish-yellow accent */
-        box-shadow: 0 0 4px #d6f77c80; /* soft shadow */
-      }
+.travel-tip-form {
+  display: flex;   /*use flexbox for layout */
+  flex-direction: column;  /*arrange form fields vertically */
+  gap: 10px;  /*gap between form fields */
+  margin-bottom: 30px; /*space at bottom of form */
 
-      &:hover {    
-        background-color: #D6F77C;/* change bg colour on hover */
-        color: #333;  /* grey text on hover */
-        box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect w slight opacity */
-        filter: brightness(1.1); /*make a little brighter on hover */
-      }
+  .form-field {
+    background-color: #D1E6FF; /* pale blue */
+    border: 1px solid #ccc;
+    padding: 8px;  /*padding inside field */
+    border-radius: 4px;  /*rounded corners */
+    font-family: inherit;   /*use same font as parent */
+    width: 100%;  /*take up full width of container */
+    box-sizing: border-box; /*ncilude padding and border in total width */
+
+    /*styling for form fields when user has clicked into them (focussed) */
+    &:focus {
+      outline: none;  /* no outline */
+      border-color: #d6f77c; /*  greenish-yellow accent */
+      box-shadow: 0 0 4px #d6f77c80; /* soft shadow */
     }
-  
-    /*styling for submit button */
-    button {
-      padding: 10px; 
-      background-color: #64a5f5;
-      color: #333;
-      border: none;   /*no border */
-      font-weight: bold;
-      border-radius: 4px;   /*rounded corners */
-      cursor: pointer;  /* to indicate clickable button */
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /* smooth transitions */
+
+    &:hover {    
+      background-color: #D6F77C;/* change bg colour on hover */
+      color: #333;  /* grey text on hover */
+      box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect w slight opacity */
+      filter: brightness(1.1); /*make a little brighter on hover */
     }
   }
-    button:hover {
-    background-color: #D6F77C;
-    color: #333;
-    transform: scale(1.05); /*slightly increase size */
-    box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
-    filter: brightness(1.1); /*make the button brighter */
-  }
-
-
-  .tips-list {
-    display: flex;  /*use flexbox for layout */
-    flex-direction: column;   /*arrange items vertically */
-    gap: 20px;
-  }
-  
-  .tip-card {
-    background-color: #D1E6FF;
-    padding: 20px;
-    border-radius: 8px;   /* rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /*subtle shadow for depth */
-  }
-  
-  .tip-actions {
-    display: flex;   /*use flexbox for layout */
-    gap: 10px;
-    margin-top: 10px;
-  
-    button {
-      background-color: #d6f77c;
-      color:#333;
-      padding: 5px 10px;
-      border: none;
-      border-radius: 4px;   /* rounded corners */
-      cursor: pointer;  /* to indicate clickable button */
-      transition: all 0.3s ease; // smooth animation
-
-      &:hover {
-        background-color: #c3e867; // A slightly darker/lighter green
-        color: black;
-        transform: scale(1.05); // slight increase in size on hover 
-        box-shadow: 0 0 15px rgba(143, 250, 3, 0.822); /* Add a glowing effect */
-        filter: brightness(1.2); /* Make the box brighter */
-      }
-    }
-  }
-  
+}
