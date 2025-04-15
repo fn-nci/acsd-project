@@ -53,42 +53,41 @@
   }
   
   
-   /* form styling */
-  form {
-    display: flex;  /*flexbox for layout */
-    flex-direction: row; /*arrange horizontally */
-    align-items: center;  /* centre vertically */
-    justify-content: center;  /*centre horizontally */
-    gap: 10px; /*space between form elements */
-  }
-  
+/* form styling */
+.weather-form {
+  display: flex;  /*flexbox for layout */
+  flex-direction: row; /*arrange horizontally */
+  align-items: center;  /* centre vertically */
+  justify-content: center;  /*centre horizontally */
+  gap: 10px; /*space between form elements */
+
   /*styling for the input field */
-  form input[type="text"] {
+  input[type="text"] {
     background-color: #D1E6FF;
     border: 1px solid #ddd;
     padding: 8px;  /*add padding space inside input field */
     border-radius: 4px; /*rounded corners */
     width: 200px; /*set width of input field */
   }
-  
-  form input[type="text"]:hover {
+
+  input[type="text"]:hover {
     background-color: #D6F77C;  /*bg colour change on hover */
     color: #333;  /*text colour on hover */
     transform: scale(1.05); /* slightly increase the size */
     box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect with a little opacity */
     filter: brightness(1.1); /* make brighter */
   }
-  
+
   /* Focus effect */
-  form input[type="text"]:focus {
+  input[type="text"]:focus {
     border-color: #007bff; /*change border color when focused */
     background-color: #e6f3ff; /*lighter background on focus */
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /*blue glow effect on focus, 0.5 opacity */
     outline: none; /*no outline */
   }
-  
+
   /* Styling for search button */
-  form button[type="submit"] {
+  button[type="submit"] {
     background-color: #64a5f5;
     color: #333;
     padding: 10px 20px;  /*space inside */
@@ -98,14 +97,16 @@
     margin-left: 10px; /* Space between input and button */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /*smooth transitions */
   }
-  
-  form button[type="submit"]:hover {
+
+  button[type="submit"]:hover {
     background-color: #D6F77C;
     color: #333;
     transform: scale(1.05); /*slightly increase  size */
     box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
     filter: brightness(1.1); /*make button brighter */
   }
+}
+
   
   /*style for intro text */
   .intro-text {
