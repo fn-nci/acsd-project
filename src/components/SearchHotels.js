@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Hotel as HotelIcon, MapPin, Mail } from 'lucide-react'; // https://lucide.dev/guide/packages/lucide-react
 import '../styles/SearchHotels.scss';
+import Rating from "./Rating"; //importing star ratings component
 
 
 function SearchHotels(props) {
@@ -101,11 +102,12 @@ function SearchHotels(props) {
                         </p>
                         <p><MapPin size={18}/>{place.properties.address_line2 || "Address not available"}</p>
                         <p><Mail size={18}/>{place.properties.postcode}</p>
+                        {/*Adding the ratings*/}
+                        <Rating />
                     </li>
                 ))}
             </ul>
             {/*Load More button added*/}
-            <hr /><br />
             <button onClick={handleClick} disabled={buttonDisabled} className="load-more-button">Load more hotels</button>
             {buttonDisabled ? <p>You reached the end of your search - no more hotels can be found in this area</p> : null}
         </div>

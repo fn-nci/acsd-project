@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Geolocation from '../components/Geolocation';
 import '../styles/Hotels.scss';
 import SearchHotels from '../components/SearchHotels';
+import ColumnVis from '../components/ColumnVis'; // addig the chart
 
 function Hotels() {
     const [ latitude, setLatitude ] = useState(null); // stores latitude
@@ -31,6 +32,8 @@ function Hotels() {
            {latitude && longitude && (
                 <SearchHotels latitude={latitude} longitude={longitude}/>
             )}
+            <hr /><br />
+            <ColumnVis />
         </div>
     );
 

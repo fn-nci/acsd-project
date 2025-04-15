@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Geolocation from '../components/Geolocation';
 import SearchRestaurants from '../components/SearchRestaurants';
 import '../styles/Restaurants.scss';
+import Map from '../components/Map'; // adding the map
 
 function Restaurants() {
     const [ latitude, setLatitude ] = useState(null); // stores latitude
@@ -27,8 +28,12 @@ function Restaurants() {
 
             {/* Pass a callback to Geolocation to send lat and lon back when available*/}
             <Geolocation onLocationFetched = {handleLocationFetched}/>
+            {/*passing the props*/}
            {latitude && longitude && (
-                <SearchRestaurants latitude={latitude} longitude={longitude}/> // passing the props
+                <div>
+                    <SearchRestaurants latitude={latitude} longitude={longitude}/>
+                    <Map latitude={latitude} longitude={longitude} />
+                </div>
             )}
         </div>
     );

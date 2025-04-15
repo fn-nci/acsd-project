@@ -40,6 +40,9 @@ const Navbar = () => {
           <Link to="/irelandtraveltips" className="nav-link">
             IrelandTravelTips
           </Link>
+          <Link to="/contact_us" className="nav-link">
+            Contact Us
+          </Link>
           {isAuthenticated ? (
             <>
               <span className="nav-link user-name">

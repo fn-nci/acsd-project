@@ -15,6 +15,8 @@ import Restaurants from './pages/Restaurants';
 import IrishWeather from './pages/IrishWeather';
 import IrishInfo from './pages/IrishInfo';
 import IrelandTravelTips from './pages/IrelandTravelTips';
+import ContactUs from './pages/ContactUs';
+import 'leaflet/dist/leaflet.css';
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <main className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/contact_us" element={<ContactUs />} />
               <Route 
                 path="/destinations" 
                 element={
