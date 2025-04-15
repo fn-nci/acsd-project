@@ -6,25 +6,8 @@
   margin: 50px auto;  /*centre page horizontally by setting auto margins on both sides */
   padding: 20px;
 
-  /*styling for submit button */
-  button {
-    padding: 10px; 
-    background-color: #64a5f5;
-    color: #333;
-    border: none;   /*no border */
-    font-weight: bold;
-    border-radius: 4px;   /*rounded corners */
-    cursor: pointer;  /* to indicate clickable button */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /* smooth transitions */
-
-    &:hover {
-      background-color: #D6F77C;
-      color: #333;
-      transform: scale(1.05); /*slightly increase size */
-      box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
-      filter: brightness(1.1); /*make the button brighter */
-    }
   }
+
 
   .tips-list {
     display: flex;  /*use flexbox for layout */
@@ -62,7 +45,6 @@
       }
     }
   }
-}
 
 /* page header scss to match other pages */
 .tips-page-header {
@@ -99,11 +81,40 @@
   }
 }
 
+/*targeting the traveltipform but it displays here so i'm keeping the styling in one location */
+ .travel-tip-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+ }
+
 .travel-tip-form {
   display: flex;   /*use flexbox for layout */
   flex-direction: column;  /*arrange form fields vertically */
   gap: 10px;  /*gap between form fields */
   margin-bottom: 30px; /*space at bottom of form */
+
+
+    /*styling for submit button */
+    button {
+      padding: 10px; 
+      background-color: #64a5f5;
+      color: #333;
+      border: none;   /*no border */
+      font-weight: bold;
+      max-width: 200px;
+      align-self: center;
+      border-radius: 4px;   /*rounded corners */
+      cursor: pointer;  /* to indicate clickable button */
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /* smooth transitions */
+  
+      &:hover {
+        background-color: #D6F77C;
+        color: #333;
+        transform: scale(1.05); /*slightly increase size */
+        box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
+        filter: brightness(1.1); /*make the button brighter */
+      }
+    }
 
   .form-field {
     background-color: #D1E6FF; /* pale blue */
