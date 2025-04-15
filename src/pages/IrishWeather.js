@@ -95,7 +95,7 @@ const IrishWeather = () => {
   };
 
   return ( 
-    <div>
+    <div className="weather-page-body">
       {/* adding header to create unified feel for website */}
      <div className="weather-page-header">
       <h2>Irish Weather</h2>
