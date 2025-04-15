@@ -76,7 +76,7 @@ const IrelandTravelTips = () => {
     <>
     <div className="tips-page-header">
     <h2>Travel Tips</h2>
-     <div className="weather-info">
+     <div className="tip-info">
        <p>
        Got a favourite Irish destination? Share your travel tips and discover others here.
        </p>

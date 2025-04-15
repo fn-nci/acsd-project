@@ -2,112 +2,72 @@
 /* SCSS styling for IrishWeather.js */
 
 /* Forecast title styling */
-.forecast-title {
+.irish-weather-content {
+  .forecast-title {
     text-align: center;
     margin-bottom: 20px;   /* space at bottom */
   }
-  
 
   /* current weather title styling */
   .current-weather-title {
     text-align: center;
     margin-bottom: 20px;
   }
-  
 
-   /* page header scss to match other pages */
-  .weather-page-header {
-    position: relative;
-    height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('../assets/irish-hero.jpg') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  
-  .weather-page-header h2 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: fadeInDown 1s ease-out;
-    color: white; // set white
-  }
-  
-  .weather-page-header .irishinfo-info {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
-  .weather-page-header .irishinfo-info p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease-out 0.3s backwards;
-    color: white; // explicitly set white
-  }
-  
-  
-/* form styling */
-.weather-form {
-  display: flex;  /*flexbox for layout */
-  flex-direction: row; /*arrange horizontally */
-  align-items: center;  /* centre vertically */
-  justify-content: center;  /*centre horizontally */
-  gap: 10px; /*space between form elements */
+  /* form styling */
+  .weather-form {
+    display: flex;  /*flexbox for layout */
+    flex-direction: row; /*arrange horizontally */
+    align-items: center;  /* centre vertically */
+    justify-content: center;  /*centre horizontally */
+    gap: 10px; /*space between form elements */
 
-  /*styling for the input field */
-  input[type="text"] {
-    background-color: #D1E6FF;
-    border: 1px solid #ddd;
-    padding: 8px;  /*add padding space inside input field */
-    border-radius: 4px; /*rounded corners */
-    width: 200px; /*set width of input field */
+    /*styling for the input field */
+    input[type="text"] {
+      background-color: #D1E6FF;
+      border: 1px solid #ddd;
+      padding: 8px;  /*add padding space inside input field */
+      border-radius: 4px; /*rounded corners */
+      width: 200px; /*set width of input field */
+    }
+
+    input[type="text"]:hover {
+      background-color: #D6F77C;  /*bg colour change on hover */
+      color: #333;  /*text colour on hover */
+      transform: scale(1.05); /* slightly increase the size */
+      box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect with a little opacity */
+      filter: brightness(1.1); /* make brighter */
+    }
+
+    /* Focus effect */
+    input[type="text"]:focus {
+      border-color: #007bff; /*change border color when focused */
+      background-color: #e6f3ff; /*lighter background on focus */
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /*blue glow effect on focus, 0.5 opacity */
+      outline: none; /*no outline */
+    }
+
+    /* Styling for search button */
+    button[type="submit"] {
+      background-color: #64a5f5;
+      color: #333;
+      padding: 10px 20px;  /*space inside */
+      border: none;
+      border-radius: 4px;  /* rounded corners */
+      cursor: pointer;  /* change cursor to pointer on mouseover to show it's clickable */
+      margin-left: 10px; /* Space between input and button */
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /*smooth transitions */
+    }
+
+    button[type="submit"]:hover {
+      background-color: #D6F77C;
+      color: #333;
+      transform: scale(1.05); /*slightly increase  size */
+      box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
+      filter: brightness(1.1); /*make button brighter */
+    }
   }
 
-  input[type="text"]:hover {
-    background-color: #D6F77C;  /*bg colour change on hover */
-    color: #333;  /*text colour on hover */
-    transform: scale(1.05); /* slightly increase the size */
-    box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect with a little opacity */
-    filter: brightness(1.1); /* make brighter */
-  }
-
-  /* Focus effect */
-  input[type="text"]:focus {
-    border-color: #007bff; /*change border color when focused */
-    background-color: #e6f3ff; /*lighter background on focus */
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /*blue glow effect on focus, 0.5 opacity */
-    outline: none; /*no outline */
-  }
-
-  /* Styling for search button */
-  button[type="submit"] {
-    background-color: #64a5f5;
-    color: #333;
-    padding: 10px 20px;  /*space inside */
-    border: none;
-    border-radius: 4px;  /* rounded corners */
-    cursor: pointer;  /* change cursor to pointer on mouseover to show it's clickable */
-    margin-left: 10px; /* Space between input and button */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /*smooth transitions */
-  }
-
-  button[type="submit"]:hover {
-    background-color: #D6F77C;
-    color: #333;
-    transform: scale(1.05); /*slightly increase  size */
-    box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
-    filter: brightness(1.1); /*make button brighter */
-  }
-}
-
-  
   /*style for intro text */
   .intro-text {
     background: #D6F77C;
@@ -119,14 +79,14 @@
     max-width: 600px; /* maximum width to stop it from stretching too wide */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /*subtle shadow for depth */
   }
-  
+
   /*hover effect */
   .intro-text:hover {
     transform: scale(1.05); /* slightly increase the size */
     box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add glowing effect */
     filter: brightness(1.1); /*make box brighter */
   }
-  
+
   /*style for current weather box */
   .current-weather-box {
     background: #D6F77C;
@@ -139,14 +99,14 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /*subtle shadow for depth */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /*smooth transitions */
   }
-  
+
   /* hover effect */
   .current-weather-box:hover {
     transform: scale(1.05); /*slightly increase size */
     box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add glowing effect */
     filter: brightness(1.1); /* make box brighter */
   }
-  
+
   /* grid for forecast items */
   .forecast-grid {
     display: grid;  /* show items in grid */
@@ -156,7 +116,7 @@
     padding: 0 20px; /* padding around  grid */
     margin-bottom: 20px; /* space below  grid */
   }
-  
+
   /*forecast item box styling */
   .forecast-item {
     background: #E8FB9F;
@@ -166,26 +126,25 @@
     text-align: center;
     width: 85%; /* stretch items within grid cells */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /*smooth transitions */
+
+    h4 {
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    &:hover {
+      transform: scale(1.05); /*slightly increase size */
+      box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /*add glowing effect */
+      filter: brightness(1.05); /* make box brighter */
+    }
   }
-  
-  /* Mouseover effect */
-  .forecast-item:hover {
-    transform: scale(1.05); /*slightly increase size */
-    box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /*add glowing effect */
-    filter: brightness(1.05); /* make box brighter */
-  }
-  
-  .forecast-item h4 {
-    margin: 10px 0;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .forecast-item p {
-    margin: 5px 0;
-    font-size: 14px;
-  }
-  
+
   /* container styling for all of IrishWeather */
   .irish-info-container {
     max-width: 1200px;   /*set max width so it doesn't stretch too wide on large screens */
@@ -197,7 +156,7 @@
     flex-wrap: wrap; /*allow wrapping of content */
     justify-content: space-between; /*spread items out with space between */
   }
-  
+
   /* chart section styling */
   .charts-section {
     display: flex;  /*use flexbox for layout */
@@ -207,7 +166,7 @@
     padding: 0 20px;  /*horizontal padding inside container */
     justify-content: space-between; /*evenly spread out chart cards with space in between */
   }
-  
+
   /*individual chart card styling */
   .chart-card {
     background-color: aliceblue; /* light blue background for each chart card */
@@ -216,24 +175,23 @@
     width: 48%; /* adjust width to allow 2 cards per row */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
   }
-  
+
   .card-header {
     margin-bottom: 20px; /* increase bottom margin for spacing */
     text-align: center; /* centre title */
+
+    h3 {
+      margin-bottom: 10px;  /*space below title */
+      font-size: 1.5rem; /* adjust title size to 1.5 root */
+      font-weight: bold;
+    }
+
+    select {
+      margin-top: 10px; /* space between title and dropdown */
+      padding: 5px 10px;
+    }
   }
-  
-  .card-header h3 {
-    margin-bottom: 10px;  /*space below title */
-    font-size: 1.5rem; /* adjust title size to 1.5 root */
-    font-weight: bold;
-  }
-  
-  /* styling for dropdown mwnu */
-  .card-header select {
-    margin-top: 10px; /* space between title and dropdown */
-    padding: 5px 10px;
-  }
-  
+
   /* dropdown button styling */
   .dropdown-button {
     background-color: #17a2b8; /* same as  search button color */
@@ -246,91 +204,117 @@
     width: auto; /* prevent dropdown from spanning entire width */
     display: inline-block; /*let it sit inline w/ other elements */
     transition: all 0.3s ease; /*smooth transition for hover effects */
-  
+
     &:hover {
       background-color: #D6F77C; /*change bg color on mouseover */
       color: #333; /* change text color to grey on hover */
       transform: scale(1.1); /*slightly increase button size on hover */
       box-shadow: 0 0 8px #D6F77C; /* subtle glow around the button */
     }
-  
-    /*dropdown menu item styling */
-    select {
 
+    select {
       border: 1px solid #ccc; /* Add a light border */
       padding: 8px;
     }
-  
-    /* selected option styling */
+
     select option {
       background-color: #17a2b8; /* blue bg colour */
       color: white; /* white text for contrast */
     }
-  
-    /*hover styling for options */
+
     select option:hover {
       background-color: #D6F77C; /* colour change on hover */
       color: #333; /* text color grey */
     }
-  
-    /* Focus Styling */
+
     &:focus {
       outline: none;
       box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); /*subtle focus ring */
     }
   }
-  
+
   /* card body for Highcharts component */
   .card-body {
     padding-top: 10px;  /* a little padding at the top of the chart */
   }
-  
+
   /* responsive layout for small screens */
   @media (max-width: 768px) {
-    /*forecast grid should stack vertically on smaller screens */
     .forecast-grid {
       grid-template-columns: 1fr; /*stack all forecast items in a single column */
       gap: 10px; /*reduce gap on small screens */
     }
-  
-    /*adjust intro text width */
+
     .intro-text {
       width: 90%; /*make it 90% width on smaller screens */
     }
-  
-    /*adjust current weather box width */
+
     .current-weather-box {
       width: 90%; /*adjust width on smaller screens */
     }
-  
-    /*stack charts vertically */
+
     .charts-section {
       flex-direction: column; /*stack  charts vertically */
       gap: 20px; /*adjust gap between cards */
     }
-  
-    /*adjust individual chart card width */
+
     .chart-card {
       width: 100%; /* Make chart cards full width on small screens */
     }
   }
-  
-  /*for screens w max width of 480px eg phones */
+
   @media (max-width: 480px) {
     .forecast-item {
       padding: 15px; /*reduce padding for smaller screens */
     }
-  
+
     .current-weather-box, .intro-text {
       width: 100%; /*make these take up full width on tiny screens */
     }
-  
+
     form input[type="text"] {
       width: 150px; /*reduce input field width */
     }
-  
+
     .forecast-title, .current-weather-title, .irish-weather-title {
       font-size: 18px; /*reduce title font size */
     }
   }
-  
+}
+
+/* page header scss to match other pages */
+.weather-page-header {
+  position: relative;
+  height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('../assets/irish-hero.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.weather-page-header h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease-out;
+  color: white; // set white
+}
+
+.weather-page-header .irishinfo-info {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.weather-page-header .irishinfo-info p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+  color: white; // explicitly set white
+}
