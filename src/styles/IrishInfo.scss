@@ -13,7 +13,7 @@
   }
 
    /* page header scss to match other pages */
-  .page-header {
+  .info-page-header {
     position: relative;
     height: 400px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -28,7 +28,7 @@
   }
 
  
-  .page-header h2 {
+  .info-page-header h2 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -36,13 +36,13 @@
     color: white; // just to be safe
   }
   
-  .page-header .weather-info {
+  .info-page-header .weather-info {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 2rem;
   }
   
-  .page-header .weather-info p {
+  .info-page-header .weather-info p {
     font-size: 1.2rem;
     line-height: 1.8;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);

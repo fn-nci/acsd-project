@@ -74,7 +74,7 @@ const IrelandTravelTips = () => {
   return (
 
     <>
-    <div className="page-header">
+    <div className="tips-page-header">
     <h2>Travel Tips</h2>
      <div className="weather-info">
        <p>

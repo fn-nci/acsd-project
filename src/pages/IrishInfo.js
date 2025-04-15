@@ -115,7 +115,7 @@ const handleToggle = () => {
     //wrapping it all in a fragment to acommodate me adding a page header to fit in with look of other pages
     <>   
     {/* adding header to create unified feel for website */} 
-    <div className="page-header">
+    <div className="info-page-header">
     <h2>Irish Info</h2>
     <div className="irishinfo-info">
      <p>
