@@ -1,16 +1,70 @@
 /* Author: Ailsa Prideaux-Mooney, April 2025 */
 /* SCSS styling for IrishInfo.js */
-
 /* container for IrishInfo page */
 .irish-info-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-wrap: wrap; /* allow wrapping of content */
-    justify-content: space-between;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping of content */
+  justify-content: space-between;
+
+  /*heading styling */
+  h1, h2 {
+    color: #333;   /*dark gray text */
+    margin-bottom: 10px;  /*add space below heading to separate from next element */
   }
+
+  /*paragraph styling */
+  p {
+    color: #555; /*slightly lighter gray for body text */
+    font-size: 1rem;  /*set font size to root to be consistent */
+    line-height: 1.5; /*increase line spacing */
+    margin-bottom: 10px; /*add space below paragraph */
+  }
+
+  /*styling for currency dropdown */
+  select {
+    padding: 8px;   /*add space inside dropdown for better target area */
+    margin-top: 10px;    /*add space above dropdown to separate it */
+    font-size: 1rem;   /*set text size to be consistent with base font size */
+    border: 1px solid #ddd;  /*light grey border for dropdown */
+    border-radius: 4px; /*slightly rounded corners - I don't like sharp corners lol */
+    cursor: pointer;   /*change the cursor to pointer to show it's clickable */
+  }
+
+  /*styling for events list  */
+  ul {
+    list-style: none;  /*get rid of default bullet points cos they are ugly */
+    padding: 0;  /*remove default padding  */
+    display: flex;  /*make the list a flex container */
+    flex-direction: column; /*display list items vertically */
+    align-items: center;  /*centre list items horizontally within container */
+  }
+
+  li {
+    margin-bottom: 8px; /*add space between each list item  */
+  }
+
+  /*styling for anchor tags  */
+  a {
+    color: #051074;  /* text color nice dark French blue */
+    text-decoration: none;  /*no underline */
+    font-size: 1.1rem;  /* slightly bigger than default root size */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* smooth transition */
+    display: inline-block; /* allow anchor tag to behave like block element to allow padding and transform */
+    padding: 5px 10px; /* add some padding to allow space to scale */
+
+    &:hover {
+      text-decoration: underline;  /* add underline on mouseover to show it's clickable */
+      background-color: #D6F77C; /* colour change on mouseover */
+      color: #0f4d99;  /* colour change slightly lighter on mouseover */
+      transform: scale(1.2); /* scale a little on mouseover */
+    }
+  }
+}
+
 
    /* page header scss to match other pages */
   .info-page-header {
@@ -69,8 +123,8 @@
     transform-origin: center center;
   }
   
-  /* my feeble attempt at animating the flag to make it look like it's blowing in the wind, I think it looks like it's walking drunk, but I made an effort haha */
-  @keyframes flagWave {
+   /* my feeble attempt at animating the flag to make it look like it's blowing in the wind, I think it looks like it's walking drunk, but I made an effort haha */
+   @keyframes flagWave {
     0% {
       transform: skewY(0deg) translateX(0);    /* start with no skew and no horizontal shift */
     }
@@ -115,59 +169,7 @@
     }
   }
 
-  /*heading styling */
-  h1, h2 {
-    color: #333;   /*dark gray text */
-    margin-bottom: 10px;  /*add space below heading to separate from next element */
-  }
-  
-  /*paragraph styling */
-  p {
-    color: #555; /*slightly lighter gray for body text */
-    font-size: 1rem;  /*set font size to root to be consistent */
-    line-height: 1.5; /*increase line spacing */
-    margin-bottom: 10px; /*add space below paragraph */
-  }
-  
-  /*styling for currency dropdown */
-  select {
-    padding: 8px;   /*add space inside dropdown for better target area */
-    margin-top: 10px;    /*add space above dropdown to separate it */
-    font-size: 1rem;   /*set text size to be consistent with base font size */
-    border: 1px solid #ddd;  /*light grey border for dropdown */
-    border-radius: 4px; /*slightly rounded corners - I don't like sharp corners lol */
-    cursor: pointer;   /*change the cursor to pointer to show it's clickable */
-  }
-  
-  /*styling for events list  */
-  ul {
-    list-style: none;  /*get rid of default bullet points cos they are ugly */
-    padding: 0;  /*remove default padding  */
-    display: flex;  /*make the list a flex container */
-    flex-direction: column; /*display list items vertically */
-    align-items: center;  /*centre list items horizontally within container */
-  }
-  
-  li {
-    margin-bottom: 8px; /*add space between each list item  */
-  }
 
-   /*styling for anchor tags  */
-  a {
-    color: #051074;  /* text color nice dark French blue */
-    text-decoration: none;  /*no underline */
-    font-size: 1.1rem;  /* slightly bigger than default root size */
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* smooth transition */
-    display: inline-block; /* allow anchor tag to behave like block element to allow padding and transform */
-    padding: 5px 10px; /* add some padding to allow space to scale */
-  }
-  
-  a:hover {
-    text-decoration: underline;  /* add underline on mouseover to show it's clickable */
-    background-color: #D6F77C; /* colour change on mouseover */
-    color: #0f4d99;  /* colour change slightly lighter on mouseover */
-    transform: scale(1.2); /* scale a little on mouseover */
-  }
   
   /*news section styles */
   .news-container {
