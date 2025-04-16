@@ -187,7 +187,7 @@ const IrishWeather = () => {
       </form>
 
       {/*show red error msg if there's an error*/}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <div className="weather-error">{error}</div>}
 
       {weatherData && ( //check if weather data exists first
         <div><br/>
