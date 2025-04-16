@@ -30,7 +30,7 @@ const IrishWeather = () => {
 
   const getWeatherData = async (cityName) => {
     try {
-      //first API call to get latitude and longitude from city name entered by user
+      // API call to get latitude and longitude from city name entered by user
       const geocodeResponse = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
       );
@@ -45,14 +45,14 @@ const IrishWeather = () => {
       //destructure latitude and longitude from response data
       const { lat, lon } = geocodeData.coord;
 
-      //second API call to get current weather data using latitude and longitude from above
+      // API call to get current weather data using latitude and longitude from above
       const weatherResponse = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
       );
       //convert response to JSON format
       const weatherData = await weatherResponse.json();
 
-      //third API call to get 5-day forecast data for same lat and lon
+      // API call to get 5-day forecast data for same lat and lon
       const forecastResponse = await fetch(
           `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
       );
@@ -94,6 +94,59 @@ const IrishWeather = () => {
     return `${day}/${month}/${year}`; //formatted date
   };
 
+
+  //get weather based on current location (lat/lon)
+  const getWeatherByCoords = async (lat, lon) => {
+    try {
+      //call to OpenWeatherMap API using latitude and longitude (I'm sure there's a clever way to combine this with the getWeatherData 
+      //function but I'm not there yet )
+      const weatherResponse = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+      );
+      //convert response to JSON format
+      const weatherData = await weatherResponse.json();
+      //API call for the forecast
+      const forecastResponse = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+      );
+      //convert response to JSON format
+      const forecastData = await forecastResponse.json();
+
+      //set fetched weather and forecast data
+      setWeatherData(weatherData);  //save weather data in state
+      setForecastData(forecastData);  //save forecast data in state
+      setCity(weatherData.name); // set city name from response
+      setError(null);  //clear previous error messages if any
+    } catch (err) {
+      //if there's an error
+      setError('Could not retrieve weather information for your location.');
+      setWeatherData(null);  //clear previous data
+      setForecastData(null);
+    }
+  };
+
+  // detect user location and call getWeatherByCoords (ref https://www.w3schools.com/jsref/met_geo_getcurrentposition.asp)
+  const handleDetectLocation = () => {
+    //check to see if browser supports geolocation
+    if (navigator.geolocation) {
+      //try to get the current location
+      navigator.geolocation.getCurrentPosition(
+        //browser will look for user permission unless already granted, if successful, use lat and lon in getWeatherByCoords
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          getWeatherByCoords(latitude, longitude);
+        },
+        (error) => {
+          console.error("Geolocation error:", error);
+          setError("Unable to detect your location. Please enter a city instead.");
+        }
+      );
+    } else {
+      setError("Geolocation is not supported by your browser.");
+    }
+  };
+
+
   return ( 
     <div className="weather-page-body">
       {/* adding header to create unified feel for website */}
@@ -130,6 +183,7 @@ const IrishWeather = () => {
           placeholder="Enter city name"  //placeholder instead of label to indicate what to type in field
         />
         <button type="submit">Search</button>
+        <button type="button" onClick={handleDetectLocation}>Get My Location</button>
       </form>
 
       {/*show red error msg if there's an error*/}
