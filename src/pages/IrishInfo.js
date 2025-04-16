@@ -179,23 +179,23 @@ const handleToggle = () => {
 
         <h2>Popular Irish Events</h2><br/>
         <ul>   {/*unordered list, all links open in a new window*/}
-          <li><a href="https://guinnesscorkjazz.com/" target="_blank" title="Cork Jazz Festival">Cork Jazz Festival</a></li>
-          <li><a href="https://www.diff.ie/" target="_blank" title="Dublin International Film Festival">Dublin International  Film Festival</a></li>
-          <li><a href="https://internationaldublinwritersfestival.com/" target="_blank" title="The International Dublin Writers’ Festival">The International Dublin Writers’ Festival</a></li>
-          <li><a href="https://thecatlaughs.com/" target="_blank" title="Kilkenny Cat Laughs Comedy Festival">Kilkenny Cat Laughs Comedy Festival</a></li>
-          <li><a href="https://www.irishtourism.com/festival-of-world-cultures" target="_blank" title="Festival of World Cultures">Festival of World Cultures</a></li>
-          <li><a href="https://fleadhcheoil.ie/" target="_blank" title="Fleadh Cheoil na hEireann">Fleadh Cheoil na hEireann</a></li>
-          <li><a href="https://www.giaf.ie/" target="_blank" title="Galway Arts Festival">Galway Arts Festival</a></li>
-          <li><a href="https://www.galwayoysterfestival.com/2025-festival-programme/" target="_blank" title="Galway Oyster Festival">Galway Oyster Festival</a></li>
-          <li><a href="https://galwayraces.com/" target="_blank" title="Galway Races Festival">Galway Races</a></li>
-          <li><a href="https://www.kilkennyarts.ie/" target="_blank" title="Kilkenny Arts Festival">Kilkenny Arts Festival</a></li>
-          <li><a href="https://matchmakerireland.com/" target="_blank" title="Lisdoonvarna Matchmaking Festival">Lisdoonvarna Matchmaking Festival</a></li>
-          <li><a href="https://writersweek.ie/" target="_blank" title="Listowel Writers Week">Listowel Writers Week</a></li>
-          <li><a href="https://www.npa.ie/" target="_blank" title="National Ploughing Championship">National Ploughing Championship</a></li>
-          <li><a href="https://puckfair.ie/" target="_blank" title="Puck Fair">Puck Fair</a></li>
-          <li><a href="https://roseoftralee.ie/" target="_blank" title="Rose of Tralee">Rose of Tralee</a></li>
-          <li><a href="https://stpatricksfestival.ie/" target="_blank" title="St Patrick's Day">St Patrick's Day</a></li>
-          <li><a href="https://www.wexfordopera.com/" target="_blank" title="Wexford Opera Festival">Wexford Opera Festival</a></li>
+          <li><a href="https://guinnesscorkjazz.com/" target="_blank" rel="noopener noreferrer" title="Cork Jazz Festival">Cork Jazz Festival</a></li>
+          <li><a href="https://www.diff.ie/" target="_blank" rel="noopener noreferrer" title="Dublin International Film Festival">Dublin International  Film Festival</a></li>
+          <li><a href="https://internationaldublinwritersfestival.com/" target="_blank" rel="noopener noreferrer" title="The International Dublin Writers’ Festival">The International Dublin Writers’ Festival</a></li>
+          <li><a href="https://thecatlaughs.com/" target="_blank" rel="noopener noreferrer" title="Kilkenny Cat Laughs Comedy Festival">Kilkenny Cat Laughs Comedy Festival</a></li>
+          <li><a href="https://www.irishtourism.com/festival-of-world-cultures" target="_blank" rel="noopener noreferrer" title="Festival of World Cultures">Festival of World Cultures</a></li>
+          <li><a href="https://fleadhcheoil.ie/" target="_blank" rel="noopener noreferrer" title="Fleadh Cheoil na hEireann">Fleadh Cheoil na hEireann</a></li>
+          <li><a href="https://www.giaf.ie/" target="_blank" rel="noopener noreferrer" title="Galway Arts Festival">Galway Arts Festival</a></li>
+          <li><a href="https://www.galwayoysterfestival.com/2025-festival-programme/" target="_blank" rel="noopener noreferrer" title="Galway Oyster Festival">Galway Oyster Festival</a></li>
+          <li><a href="https://galwayraces.com/" target="_blank" rel="noopener noreferrer" title="Galway Races Festival">Galway Races</a></li>
+          <li><a href="https://www.kilkennyarts.ie/" target="_blank" rel="noopener noreferrer" title="Kilkenny Arts Festival">Kilkenny Arts Festival</a></li>
+          <li><a href="https://matchmakerireland.com/" target="_blank" rel="noopener noreferrer" title="Lisdoonvarna Matchmaking Festival">Lisdoonvarna Matchmaking Festival</a></li>
+          <li><a href="https://writersweek.ie/" target="_blank" rel="noopener noreferrer" title="Listowel Writers Week">Listowel Writers Week</a></li>
+          <li><a href="https://www.npa.ie/" target="_blank" rel="noopener noreferrer" title="National Ploughing Championship">National Ploughing Championship</a></li>
+          <li><a href="https://puckfair.ie/" target="_blank" rel="noopener noreferrer" title="Puck Fair">Puck Fair</a></li>
+          <li><a href="https://roseoftralee.ie/" target="_blank" rel="noopener noreferrer" title="Rose of Tralee">Rose of Tralee</a></li>
+          <li><a href="https://stpatricksfestival.ie/" target="_blank" rel="noopener noreferrer" title="St Patrick's Day">St Patrick's Day</a></li>
+          <li><a href="https://www.wexfordopera.com/" target="_blank" rel="noopener noreferrer" title="Wexford Opera Festival">Wexford Opera Festival</a></li>
         </ul>
       </div>
 
