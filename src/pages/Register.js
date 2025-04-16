@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginStart, loginSuccess, loginFailure } from '../store/authSlice';
+import { login, setError } from '../redux/slices/authSlice';
 import { users } from '../data/users';
 import Logo from '../components/Logo';
 import '../styles/Register.scss';
@@ -9,7 +9,7 @@ import '../styles/Register.scss';
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { loading, error } = useSelector((state) => state.auth);
+  const { error } = useSelector((state) => state.auth);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -71,8 +71,6 @@ const Register = () => {
     if (!validateForm()) {
       return;
     }
-    
-    dispatch(loginStart());
 
     try {
       // Simulate API call
@@ -92,12 +90,7 @@ const Register = () => {
       // Create user object without password
       const { password, ...userWithoutPassword } = newUser;
       
-      const userData = {
-        user: userWithoutPassword,
-        token: `token-${newUser.id}-${Date.now()}`
-      };
-      
-      dispatch(loginSuccess(userData));
+      dispatch(login(userWithoutPassword));
       
       // Show success message and redirect
       setTimeout(() => {
@@ -105,7 +98,7 @@ const Register = () => {
       }, 1500);
       
     } catch (err) {
-      dispatch(loginFailure(err.message));
+      dispatch(setError(err.message));
     }
   };
 
@@ -181,9 +174,8 @@ const Register = () => {
           <button 
             type="submit" 
             className="register-button"
-            disabled={loading}
           >
-            {loading ? 'Creating Account...' : 'Create Account'}
+            Create Account
           </button>
         </form>
         <div className="register-help">

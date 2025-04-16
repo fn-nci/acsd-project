@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginStart, loginSuccess, loginFailure } from '../store/authSlice';
+import { login, setError } from '../redux/slices/authSlice';
 import { users } from '../data/users';
 import Logo from '../components/Logo';
 import '../styles/Login.scss';
@@ -9,7 +9,7 @@ import '../styles/Login.scss';
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { loading, error } = useSelector((state) => state.auth);
+  const { error } = useSelector((state) => state.auth);
 
   const [formData, setFormData] = useState({
     email: '',
@@ -26,7 +26,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(loginStart());
 
     try {
       // Simulate API call
@@ -39,18 +38,13 @@ const Login = () => {
         // Create user object without password
         const { password, ...userWithoutPassword } = user;
         
-        const userData = {
-          user: userWithoutPassword,
-          token: `token-${user.id}-${Date.now()}`
-        };
-        
-        dispatch(loginSuccess(userData));
+        dispatch(login(userWithoutPassword));
         navigate('/destinations');
       } else {
-        throw new Error('Invalid email or password');
+        dispatch(setError('Invalid email or password'));
       }
     } catch (err) {
-      dispatch(loginFailure(err.message));
+      dispatch(setError(err.message));
     }
   };
 
@@ -90,9 +84,8 @@ const Login = () => {
           <button 
             type="submit" 
             className="login-button"
-            disabled={loading}
           >
-            {loading ? 'Logging in...' : 'Login'}
+            Login
           </button>
         </form>
         <div className="login-help">
