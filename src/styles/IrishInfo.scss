@@ -109,6 +109,8 @@
     background: #D6F77C;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-items: center; /* horizontal centering */
+    text-align: center; /* centre inline text */
   }
   
   /* styling for flag image */
@@ -283,6 +285,8 @@
     border-radius: 8px; /*rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /*subtle shadow effect */
     width: 100%;  /*take up full width of parent */
+    align-items: center; /* horizontal centering */
+    text-align: center; /* centre text */
   }
   
   .studying-container {
@@ -291,6 +295,8 @@
     padding: 20px; /*add some padding around content */
     background-color: #E8FB9F; /*light background colour */
     border-radius: 8px; /*rounded corners */
+    align-items: center; /* horizontal centering */
+    text-align: center; /* centre text */
   }
   
   /*universities grid */
