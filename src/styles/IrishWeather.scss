@@ -233,7 +233,7 @@
 
   /* dropdown button styling */
   .dropdown-button {
-    background-color: #17a2b8; /* same as  search button color */
+    background-color: #2E7D32; /* same as  search button color */
     color: white;
     padding: 8px 16px;
     font-size: 14px;
@@ -245,8 +245,8 @@
     transition: all 0.3s ease; /*smooth transition for hover effects */
 
     &:hover {
-      background-color: #D6F77C; /*change bg color on mouseover */
-      color: #333; /* change text color to grey on hover */
+      background-color: #4CAF50; /*change bg color on mouseover */
+      color: #FFFFFF; /* text color on hover */
       transform: scale(1.1); /*slightly increase button size on hover */
       box-shadow: 0 0 8px #D6F77C; /* subtle glow around the button */
     }
