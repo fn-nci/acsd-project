@@ -2,7 +2,7 @@
 
 .contact-us-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   min-height: calc(100vh - 200px);
   padding: 2rem;
@@ -120,3 +120,30 @@
     }
   }
 }
+
+.about-us-card {
+  background-color: $background-light;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('../assets/ireland-about-us.png');
+  padding: 2.5rem;
+  border-radius: $border-radius;
+  border: 2px solid rgba($text-secondary, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+
+  h2 {
+    text-align: center;
+    color: $text-primary;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  p {
+     text-align: center; 
+     color:$text-secondary;
+     margin-bottom: 2rem;
+     font-size: 1.2rem;
+  }
+} 

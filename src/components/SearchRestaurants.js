@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MapPin, Phone, Globe, UtensilsCrossed } from 'lucide-react'; // https://lucide.dev/guide/packages/lucide-react
-//importing swiper
+//importing swiper - https://swiperjs.com/react
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
