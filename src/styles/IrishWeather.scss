@@ -25,15 +25,15 @@
 
     /*styling for the input field */
     input[type="text"] {
-      background-color: #D1E6FF;
-      border: 1px solid #ddd;
+      background-color: #FFFFFF;
+      border: 2px solid #4CAF50;
       padding: 8px;  /*add padding space inside input field */
       border-radius: 4px; /*rounded corners */
       width: 200px; /*set width of input field */
     }
 
     input[type="text"]:hover {
-      background-color: #D6F77C;  /*bg colour change on hover */
+      background-color: #FFFFFF;  /*no colour change on hover */
       color: #333;  /*text colour on hover */
       transform: scale(1.05); /* slightly increase the size */
       box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect with a little opacity */
@@ -50,8 +50,8 @@
 
     /* Styling for search button */
     button[type="submit"] {
-      background-color: #64a5f5;
-      color: #333;
+      background-color: #1B5E20;
+      color: #white;
       padding: 10px 20px;  /*space inside */
       border: none;
       border-radius: 8px;  /* rounded corners */
@@ -61,8 +61,8 @@
     }
 
     button[type="submit"]:hover {
-      background-color: #D6F77C;
-      color: #333;
+      background-color: #4CAF50;
+      color: #FFFFFF;
       transform: scale(1.05); /*slightly increase  size */
       box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
       filter: brightness(1.1); /*make button brighter */
@@ -70,8 +70,8 @@
 
     /* Styling for locate button */
     button[type="button"] {
-      background-color: #64a5f5;
-      color: #333;
+      background-color: #1B5E20;
+      color: #FFFFFF;
       padding: 10px 20px;  /*space inside */
       border: none;
       border-radius: 8px;  /* rounded corners */
@@ -80,9 +80,9 @@
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /*smooth transitions */
     }
 
-    button[type="submit"]:hover {
-      background-color: #D6F77C;
-      color: #333;
+    button[type="button"]:hover {
+      background-color: #4CAF50;;
+      color: #FFFFFF;
       transform: scale(1.05); /*slightly increase  size */
       box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
       filter: brightness(1.1); /*make button brighter */
@@ -106,8 +106,9 @@
 
   /*style for intro text */
   .intro-text {
-    background: #D6F77C;
+    background: #FFFFFF;
     padding: 20px;
+    border: 2px solid #4CAF50;
     border-radius: 8px;   /* rounded corners */
     text-align: center;
     margin: 0 auto 20px auto; /* center text box */
@@ -125,8 +126,9 @@
 
   /*style for current weather box */
   .current-weather-box {
-    background: #D6F77C;
+    background: white;
     padding: 15px;
+    border: 2px solid #4CAF50;
     border-radius: 8px;  /* rounded corners */
     text-align: center;
     margin: 0 auto 20px auto; /*centre  box and add space at  bottom */
@@ -155,8 +157,9 @@
 
   /*forecast item box styling */
   .forecast-item {
-    background: #E8FB9F;
+    background: #FFFFFF;
     padding: 20px;
+    border: 2px solid #4CAF50;
     border-radius: 8px;  /* rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
