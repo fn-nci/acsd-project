@@ -147,3 +147,16 @@
      font-size: 1.2rem;
   }
 } 
+
+@media (max-width: 992px) {
+  .contact-us-container {
+      flex-direction: column; // stack children (cards) vertically
+      align-items:center; // center them
+  }
+
+  .contact-us-card,
+  .about-us-card {
+      max-width: 80%; //reduce the width
+      margin-bottom: $spacing-unit *2; // add space between the cards
+  }
+}
