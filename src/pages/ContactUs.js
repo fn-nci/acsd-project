@@ -81,7 +81,7 @@ function ConatctUs() {
             <div className="about-us-card">
                 <h2>Who We Are</h2>
                 <p>Welcome to Visit Ireland, a compehensive information source with all you need to know about Ireland. Take a look at the rich culture and fascinating sights that Ireland has to offer. Do not worry about anything because we are your guide to a worry free visit - check destinations, tips, weather, nearby hotels, restaurants, and even university opportunities.</p>
-                <strong>Visit Ireland - your guide to worry free visit</strong>
+                <strong>Visit Ireland - your guide to a worry free visit</strong>
             </div>      
         </div>
     )
