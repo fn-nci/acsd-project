@@ -154,7 +154,7 @@ const IrishWeather = () => {
       <h2>Irish Weather</h2>
       <div className="weather-info">
         <p>
-          We have lots of it. Come see your yourself.
+          We have lots of it. Come see for yourself.
         </p>
       </div>  
       </div> 
