@@ -58,7 +58,6 @@
 
     &:hover {
       text-decoration: underline;  /* add underline on mouseover to show it's clickable */
-      background-color: #D6F77C; /* colour change on mouseover */
       color: #0f4d99;  /* colour change slightly lighter on mouseover */
       transform: scale(1.2); /* scale a little on mouseover */
     }
@@ -106,7 +105,8 @@
   .right-container {
     width: 46%; /* take up 46% of width (so they'll appear side-by-side on big screens) */
     padding: 20px;
-    background: #D6F77C;
+    background: #FFFFFF;
+    border: 2px solid #2E7D32;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     align-items: center; /* horizontal centering */
@@ -120,6 +120,9 @@
     object-fit: cover;      /* cover area without stretching */
     animation: flagWave 4s ease-in-out infinite;    /* 4 second cycle for my amazing waving flag animation, lol */
     transform-origin: center center;
+    border: 0.5px solid #ccc; /* slight grey border  */
+    border-radius: 6px; /* soften corners a little */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* add subtle depth */
   }
   
    /* my feeble attempt at animating the flag to make it look like it's blowing in the wind, I think it looks like it's walking drunk, but I made an effort haha */
@@ -161,22 +164,24 @@
   /* going crazy with keyframes for the glowing effect */
   @keyframes glow {
     0% {
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3); /*soft glow with 2 box shadow blurs w varying opacity */
+      box-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.3); /*soft glow with 2 box shadow blurs w varying opacity */
     }
     100% {
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.6); /*intense glow with 2 box shadows w varying opacity */
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.9), 0 0 30px rgba(0, 255, 0, 0.6); /*intense glow with 2 box shadows w varying opacity */
     }
   }
-
 
   
   /*news section styles */
   .news-container {
-    width: 100%;  /*allow container to span full width of parent */
-    max-width: 1200px; /*restrict width to avoid stretching too wide on large screens */
-    margin-top: 30px; /*add space above news section to separate from content above */
-    padding: 10px 20px;   /*add space inside the container to give inner content space away from edges */
-    background: #D1E6FF; /* pale blue background */ 
+    display: flex;  /*using flexbox */
+    flex-direction: column;
+    width: fit-content;  /*fit box to content */
+    max-width: 100%; /* keep it from overflowing parent */
+    margin: 30px auto; /* centre  horizontally */
+    padding: 10px 70px;   /*add space inside the container to give allow content space to transform on hover */
+    background: #FFFFFF; /* white background */ 
+    border: 2px solid #2E7D32;
     border-radius: 8px;  /* get rid of those pointy corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* nice low-key shadow for depth effect */
   }
@@ -223,8 +228,8 @@
   
   /* styling for Show More button */
   .show-more-btn {
-    background-color: #64a5f5; /* same blue background as search button */
-    color: #333; /* that dark grey again */
+    background-color: #2E7D32; /* dark green bg */
+    color: #FFFFFF; /* white text */
     padding: 10px 20px; /*a little bit of padding inside  button to make it larger, easier to click */
     border: none; /* no button border */
     border-radius: 4px; /* rounded corners */
@@ -238,24 +243,13 @@
   }
   
   .show-more-btn:hover {
-    background-color: #D6F77C; /* green background on hover */
+    background-color: #4CAF50; /* lighter green background on hover */
     color: black; /* change text color to black on hover */
     transform: scale(1.05); /* slightly increase size on hover */
     box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /* add a glowing effect */
     filter: brightness(1.1); /* make button brighter */
   }
 
-  .news-container {
-    width: 100%;  /*take up full width of parent element */
-    max-width: 1200px; /* stop it stretching too wide on large screens */
-    margin-top: 40px; /*add space above */
-    padding: 20px;  /*add padding inside container */
-    background: #D1E6FF; /* pale blue background */ 
-    border-radius: 8px;  /* rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* nice soft shadow effect for depth */
-    display: flex;  /* flexbox layout  */
-    flex-direction: column; /* align items vertically */
-  }
   
    /* styling for news source div */
   .news-source {
@@ -293,7 +287,8 @@
     max-width: 700px; /*stop content spreadng too wide */
     margin: 0 auto; /*centre content horizontally */
     padding: 20px; /*add some padding around content */
-    background-color: #E8FB9F; /*light background colour */
+    background-color: #FFFFFF; /*white background colour */
+    border: 2px solid #2E7D32;
     border-radius: 8px; /*rounded corners */
     align-items: center; /* horizontal centering */
     text-align: center; /* centre text */
@@ -311,15 +306,16 @@
   /* hover effect */
   .university-card:hover {
     transform: scale(1.1); /* slightly increase size on mouseover */
-    background: #D6F77C;  /* subtle colour change on mouseover */
+    background: #73fa7798;  /*  colour change on mouseover */
     color: #64a5f5;  /* text colour on mouseover */
     box-shadow: 0 0 15px rgba(5, 184, 109, 0.8); /*add a glowing effect using a kind of teal shadow */
   }
   
   /*university card styling */
   .university-card {
-    background: #E8FB9F;  /* soft yellow-green background */
+    background: #FFFFFF;  /* white background */
     padding: 20px; /* padding inside card */
+    border: 2px solid #2E7D32;
     border-radius: 8px;  /* rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* soft shadow for depth */
     text-align: center;  /* centre text inside card */
