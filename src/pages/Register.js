@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, setError } from '../redux/slices/authSlice';
-import { users } from '../data/users';
+import { register, setError } from '../redux/slices/authSlice';
 import Logo from '../components/Logo';
 import '../styles/Register.scss';
 
@@ -10,7 +9,6 @@ const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { error } = useSelector((state) => state.auth);
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,7 +16,7 @@ const Register = () => {
     confirmPassword: ''
   });
 
-  const [validationErrors, setValidationErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,79 +24,40 @@ const Register = () => {
       ...prevState,
       [name]: value
     }));
-    
-    // Clear validation error when user types
-    if (validationErrors[name]) {
-      setValidationErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
-    }
   };
 
-  const validateForm = () => {
-    const errors = {};
-    
-    if (!formData.name.trim()) {
-      errors.name = 'Name is required';
-    }
-    
-    if (!formData.email.trim()) {
-      errors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = 'Email is invalid';
-    } else if (users.some(user => user.email === formData.email)) {
-      errors.email = 'Email already exists';
-    }
-    
-    if (!formData.password) {
-      errors.password = 'Password is required';
-    } else if (formData.password.length < 6) {
-      errors.password = 'Password must be at least 6 characters';
-    }
-    
-    if (formData.password !== formData.confirmPassword) {
-      errors.confirmPassword = 'Passwords do not match';
-    }
-    
-    setValidationErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (!validateForm()) {
+    // Clear any previous errors and success message
+    dispatch(setError(null));
+    setSuccessMessage('');
+
+    // Validate passwords match
+    if (formData.password !== formData.confirmPassword) {
+      dispatch(setError('Passwords do not match'));
       return;
     }
 
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Create new user
-      const newUser = {
-        id: users.length + 1,
-        name: formData.name,
-        email: formData.email,
-        password: formData.password
-      };
-      
-      // In a real app, you would save this to a database
-      // For now, we'll just simulate success
-      
-      // Create user object without password
-      const { password, ...userWithoutPassword } = newUser;
-      
-      dispatch(login(userWithoutPassword));
-      
-      // Show success message and redirect
+    // Validate password length
+    if (formData.password.length < 6) {
+      dispatch(setError('Password must be at least 6 characters long'));
+      return;
+    }
+
+    // Register the user
+    dispatch(register({
+      name: formData.name,
+      email: formData.email,
+      password: formData.password
+    }));
+
+    // If no error occurred, show success message and navigate
+    if (!error) {
+      setSuccessMessage('Registration successful! Redirecting to login...');
       setTimeout(() => {
-        navigate('/destinations');
-      }, 1500);
-      
-    } catch (err) {
-      dispatch(setError(err.message));
+        navigate('/login');
+      }, 2000);
     }
   };
 
@@ -110,6 +69,7 @@ const Register = () => {
         </div>
         <h2>Create an Account</h2>
         {error && <div className="error-message">{error}</div>}
+        {successMessage && <div className="success-message">{successMessage}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
@@ -119,12 +79,9 @@ const Register = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className={validationErrors.name ? 'error' : ''}
+              required
               placeholder="Enter your full name"
             />
-            {validationErrors.name && (
-              <div className="error-message">{validationErrors.name}</div>
-            )}
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
@@ -134,12 +91,9 @@ const Register = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={validationErrors.email ? 'error' : ''}
+              required
               placeholder="Enter your email"
             />
-            {validationErrors.email && (
-              <div className="error-message">{validationErrors.email}</div>
-            )}
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
@@ -149,12 +103,9 @@ const Register = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className={validationErrors.password ? 'error' : ''}
+              required
               placeholder="Create a password"
             />
-            {validationErrors.password && (
-              <div className="error-message">{validationErrors.password}</div>
-            )}
           </div>
           <div className="form-group">
             <label htmlFor="confirmPassword">Confirm Password</label>
@@ -164,12 +115,9 @@ const Register = () => {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className={validationErrors.confirmPassword ? 'error' : ''}
+              required
               placeholder="Confirm your password"
             />
-            {validationErrors.confirmPassword && (
-              <div className="error-message">{validationErrors.confirmPassword}</div>
-            )}
           </div>
           <button 
             type="submit" 

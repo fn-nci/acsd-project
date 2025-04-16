@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, setError } from '../redux/slices/authSlice';
@@ -9,12 +9,17 @@ import '../styles/Login.scss';
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { error } = useSelector((state) => state.auth);
-
+  const { error, isAuthenticated } = useSelector((state) => state.auth);
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/destinations');
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,28 +29,14 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Clear any previous errors
+    dispatch(setError(null));
 
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Find user with matching credentials
-      const user = users.find(u => u.email === formData.email && u.password === formData.password);
-      
-      if (user) {
-        // Create user object without password
-        const { password, ...userWithoutPassword } = user;
-        
-        dispatch(login(userWithoutPassword));
-        navigate('/destinations');
-      } else {
-        dispatch(setError('Invalid email or password'));
-      }
-    } catch (err) {
-      dispatch(setError(err.message));
-    }
+    // Attempt to login
+    dispatch(login(formData));
   };
 
   return (
@@ -92,8 +83,8 @@ const Login = () => {
           <p>Don't have an account? <a href="/register">Register</a></p>
           <div className="demo-credentials">
             <p>Demo Credentials:</p>
-            <p>Email: test@test.com</p>
-            <p>Password: 123</p>
+            <p>Email: {users[0].email}</p>
+            <p>Password: {users[0].password}</p>
           </div>
         </div>
       </div>
