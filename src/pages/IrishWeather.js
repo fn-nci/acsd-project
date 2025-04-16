@@ -1,6 +1,6 @@
 /* Author: Ailsa Prideaux-Mooney, April 2025 */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/IrishWeather.scss'; // importing styles
 
 // Importing weather charts
@@ -83,15 +83,6 @@ const IrishWeather = () => {
   const convertTime = (timestamp) => {
     const date = new Date(timestamp * 1000); //milliseconds
     return date.toLocaleString('en-IE', { hour: '2-digit', minute: '2-digit' });
-  };
-
-  //format current date (day, month, year)
-  const formatDate = (timestamp) => {
-    const date = new Date(timestamp * 1000); //milliseconds
-    const day = date.getDate();
-    const month = date.getMonth() + 1; //starts at index zero so add 1
-    const year = date.getFullYear(); 
-    return `${day}/${month}/${year}`; //formatted date
   };
 
 
