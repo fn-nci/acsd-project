@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { MapPin, Phone, Globe, UtensilsCrossed } from 'lucide-react'; // https://lucide.dev/guide/packages/lucide-react
 //importing swiper - https://swiperjs.com/react
@@ -18,7 +18,7 @@ function SearchRestaurants(props) {
     const categories = "catering.restaurant"; // extacting restaurants by the category
     const radius = 5000; // search in meters
 
-    const fetchRestaurants = async function () {
+    const fetchRestaurants = useCallback(async function () {
         const { latitude, longitude } = props; // Getting lat and lon from props
 
         if (!latitude || !longitude) return;
@@ -47,14 +47,14 @@ function SearchRestaurants(props) {
         } finally {
             setLoading(false);
         }
-    };
+    }, [props, categories, radius, API_KEY]);
 
     //fetch restaurats as soon as latitude and longitude coordinates are available
     useEffect(() => {
         if (props.latitude && props.longitude) {
             fetchRestaurants();
         } 
-    }, [props.latitude, props.longitude]); // trigger the effect when lat and lon are updated
+    }, [props.latitude, props.longitude, fetchRestaurants]); // trigger the effect when lat and lon are updated
 
     //rendering the restaurant cards using Swiper (responsive carousel) - https://swiperjs.com/react
     return(
@@ -84,7 +84,7 @@ function SearchRestaurants(props) {
                             <p><Phone size={18} color="#1B5E20"/> Phone: {place.properties.contact?.phone|| "Not Available"}</p>
                             <p><UtensilsCrossed size={18} color="#1B5E20"/> Cuisine: {place.properties.catering?.cuisine || "Not Available"}</p>
                             <p><Globe size={18} color="#1B5E20"/> Website: {place.properties.website ? (
-                                <a href={place.properties.website} target="_blank">Website</a>
+                                <a href={place.properties.website} target="_blank" rel="noreferrer">Website</a>
                             ) : "Not available"}</p>
                             <p>Opening Hours: {place.properties.opening_hours || "Not Available"}</p>
                         </div>
